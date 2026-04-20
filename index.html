@@ -10,10 +10,10 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-–pink: #ff8fc5;
-–pink-dark: #ff4fa0;
-–cream: #1a0a14;
-–plum: #ffd0e4;
+--pink: #ff8fc5;
+--pink-dark: #ff4fa0;
+--cream: #1a0a14;
+--plum: #ffd0e4;
 }
 
 body {
@@ -22,13 +22,13 @@ background:
 radial-gradient(circle at 20% 30%, #3a0f28 0%, transparent 50%),
 radial-gradient(circle at 80% 70%, #1f0a2a 0%, transparent 50%),
 linear-gradient(135deg, #0d0510 0%, #1a0a1f 100%);
-font-family: ‘Fredoka’, sans-serif;
+font-family: 'Fredoka', sans-serif;
 display: flex;
 align-items: center;
 justify-content: center;
 overflow: hidden;
 position: relative;
-color: var(–plum);
+color: var(--plum);
 }
 
 /* floating hearts bg */
@@ -58,7 +58,7 @@ padding: 40px;
 }
 
 .message {
-font-family: ‘Pacifico’, cursive;
+font-family: 'Pacifico', cursive;
 font-size: clamp(60px, 15vw, 140px);
 color: #fff;
 min-height: 180px;
@@ -81,7 +81,7 @@ to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .tap-btn {
-font-family: ‘Fredoka’, sans-serif;
+font-family: 'Fredoka', sans-serif;
 font-size: 28px;
 padding: 22px 60px;
 border: none;
@@ -97,14 +97,14 @@ position: relative;
 font-weight: 600;
 }
 .tap-btn::before {
-content: ‘✨’;
+content: '✨';
 position: absolute;
 left: 20px;
 top: 50%;
 transform: translateY(-50%);
 }
 .tap-btn::after {
-content: ‘✨’;
+content: '✨';
 position: absolute;
 right: 20px;
 top: 50%;
@@ -114,7 +114,7 @@ transform: translateY(-50%);
 .tap-btn:active { transform: translateY(6px); box-shadow: 0 2px 0 #b8296b, 0 4px 15px rgba(255, 79, 160, 0.5); }
 
 .hint {
-font-family: ‘Caveat’, cursive;
+font-family: 'Caveat', cursive;
 font-size: 22px;
 color: #ffd0e4;
 margin-top: 15px;
@@ -200,7 +200,7 @@ position: fixed;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-font-family: ‘Pacifico’, cursive;
+font-family: 'Pacifico', cursive;
 font-size: clamp(40px, 8vw, 100px);
 color: white;
 text-shadow: 0 0 30px #ff1493, 0 0 60px #ff1493, 4px 4px 0 #2a0a1a, 8px 8px 40px rgba(0,0,0,0.6);
