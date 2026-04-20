@@ -60,13 +60,13 @@ padding: 40px;
 .message {
 font-family: ‘Pacifico’, cursive;
 font-size: clamp(60px, 15vw, 140px);
-color: var(–pink-dark);
+color: #fff;
 min-height: 180px;
 display: flex;
 align-items: center;
 justify-content: center;
 gap: 20px;
-text-shadow: 0 0 20px rgba(255, 79, 160, 0.8), 3px 3px 0 #2a0a1a, 6px 6px 30px rgba(255, 111, 174, 0.5);
+text-shadow: 0 0 18px rgba(255, 79, 160, 0.95), 0 0 40px rgba(255, 111, 174, 0.6), 3px 3px 0 #ff4fa0;
 flex-wrap: wrap;
 }
 
@@ -86,14 +86,15 @@ font-size: 28px;
 padding: 22px 60px;
 border: none;
 border-radius: 100px;
-background: linear-gradient(135deg, var(–pink-dark) 0%, #c73c86 100%);
-color: white;
+background: linear-gradient(135deg, #ff4fa0 0%, #ff8fc5 100%);
+color: #1a0512;
 cursor: pointer;
-box-shadow: 0 8px 0 #7a1f4c, 0 12px 30px rgba(255, 79, 160, 0.5);
+box-shadow: 0 8px 0 #b8296b, 0 0 30px rgba(255, 143, 197, 0.7), 0 12px 40px rgba(255, 79, 160, 0.6);
 transition: all 0.15s;
 margin-top: 40px;
 letter-spacing: 1px;
 position: relative;
+font-weight: 600;
 }
 .tap-btn::before {
 content: ‘✨’;
@@ -109,15 +110,16 @@ right: 20px;
 top: 50%;
 transform: translateY(-50%);
 }
-.tap-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 0 #7a1f4c, 0 14px 35px rgba(255, 79, 160, 0.6); }
-.tap-btn:active { transform: translateY(6px); box-shadow: 0 2px 0 #7a1f4c, 0 4px 10px rgba(255, 79, 160, 0.4); }
+.tap-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 0 #b8296b, 0 0 40px rgba(255, 143, 197, 0.9), 0 14px 45px rgba(255, 79, 160, 0.75); }
+.tap-btn:active { transform: translateY(6px); box-shadow: 0 2px 0 #b8296b, 0 4px 15px rgba(255, 79, 160, 0.5); }
 
 .hint {
 font-family: ‘Caveat’, cursive;
 font-size: 22px;
-color: var(–pink);
+color: #ffd0e4;
 margin-top: 15px;
-opacity: 0.8;
+opacity: 1;
+text-shadow: 0 0 10px rgba(255, 143, 197, 0.6);
 }
 
 /* CHAOS MODE */
