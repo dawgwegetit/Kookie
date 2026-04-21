@@ -398,9 +398,15 @@ pointer-events: none;
     if (step >= words.length) return;
 
     const laugh = document.getElementById('laughClip');
+    const isFinalTap = step === words.length - 1;
     if (laugh) {
-      laugh.currentTime = 0;
-      laugh.play().catch(() => {});
+      if (isFinalTap) {
+        laugh.pause();
+        laugh.currentTime = 0;
+      } else {
+        laugh.currentTime = 0;
+        laugh.play().catch(() => {});
+      }
     }
 
     const span = document.createElement('span');
