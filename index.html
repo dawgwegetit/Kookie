@@ -435,14 +435,10 @@ pointer-events: none;
       voice.volume = 1.0;
       voice.currentTime = 0;
       voice.play().catch(() => console.log('voice clip not found or blocked'));
-      // replay it a couple times during chaos
-      let replays = 0;
+      // loop forever with applause between plays
       voice.onended = () => {
         playClaps();
-        if (replays < 3) {
-          replays++;
-          setTimeout(() => { voice.currentTime = 0; voice.play(); }, 1400);
-        }
+        setTimeout(() => { voice.currentTime = 0; voice.play().catch(() => {}); }, 1400);
       };
     }
 
@@ -501,9 +497,20 @@ pointer-events: none;
     playMusic();
   }
 
+  let sharedCtx = null;
+  function getCtx() {
+    if (!sharedCtx) {
+      sharedCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (sharedCtx.state === 'suspended') {
+      sharedCtx.resume().catch(() => {});
+    }
+    return sharedCtx;
+  }
+
   function playClaps() {
     try {
-      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const ctx = getCtx();
       const t0 = ctx.currentTime;
       const timings = [0, 0.07, 0.16, 0.24, 0.33, 0.43, 0.52, 0.63, 0.74, 0.85];
       timings.forEach(offset => {
@@ -531,7 +538,7 @@ pointer-events: none;
 
   function playMusic() {
     try {
-      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const ctx = getCtx();
       // cute arpeggio - C major happy bops
       const notes = [523.25, 659.25, 783.99, 1046.5, 783.99, 659.25, 880, 1046.5];
       let t = ctx.currentTime;
